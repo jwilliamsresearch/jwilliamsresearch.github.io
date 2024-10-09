@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>James Williams - PhD Researcher</title>
+    <link href="../imports/Bootstrap/bootstrap.min.css" rel="stylesheet">
+    <link href="../imports/Animatecss/animate.min.css" rel="stylesheet">
+    <link href="../css/main.css" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="/">J. Williams</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#main-nav"
+                    aria-controls="main-nav" aria-expanded="false" aria-label="Toggle mobile navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="main-nav">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="../">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../research/">Research</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="../software.html">Software</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="header-base header-small">
+            <div class="central-holder">
+                <div class="container central-container">
+                    <h1 class="ps-4 clip mask-treeroad animate__animated animate__backInRight">Research</h1>
+                    <p class="ps-4 mb-0 subtitle animate__animated animate__fadeInRight">James' research investigates the intersection of <b>Leisure Walking</b> and <b>Geographic Information Science</b>; incorporating the topics of <b>Human-Computer Interaction</b>, <b>Platial Information</b>, and <b>Information Visualisation</b>.</p>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="bg-purple text-white pt-4 pb-4">
+            <div class="container pt-4 pb-0">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <h3>Research Contributions</h3>
+                        <p class="lead">
+                            My current research investigates the contextual subject of leisure walking route recommendation. 
+                        </p>
+                        <hr>
+                        <p>My research interests span Information Visualisation, Geographic Information Science, Human-Computer Interaction, and Computer Science. This page introduces an overview of my research, research projects, and my publications. </p>
+                        <p>The wordcloud represents the abstracts of each of the research publications below, representing the common themes of my work. </p>
+                    </div>
+
+                    <div class="col">
+                        <canvas id="wordcloud-output" class="ratio ratio-4x3"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container pt-4 pb-4">
+            <div class="row row-cols-1 row-cols-lg-3 g-4">
+                <div class="col">
+                    <a href="LeisureWalkingFramework.html">
+                    <div class="card text-bg-dark h-100">
+                        <video muted loop class="dynamic-video">
+                            <source src="../media/videos/lwf.mp4" type="video/mp4">
+                        </video>
+                        <div class="card-img-overlay d-flex flex-wrap align-content-end">
+                            <span class="bg-info ms-auto badge">2020 - 2024</span>
+                            <h5 class="card-title title-font">A Framework for Curating Personalised Leisure Walking Experiences</h5>
+                        </div>
+                    </div>
+                </a>
+                </div>
+                <div class="col">
+                    <a href="lwswg.html">
+                    <div class="card text-bg-dark h-100">
+                        <video muted loop class="dynamic-video">
+                            <source src="../media/videos/lwswg.mp4" type="video/mp4">
+                        </video>
+                        <div class="card-img-overlay d-flex flex-wrap align-content-end">
+                            <span class="bg-green ms-auto badge">2024 - Present</span>
+                            <img class="img-fluid"
+                        src="../media/img/lwswg-logo.png" alt="Logo of the Leisure Walking Systems Working Group">
+                        </div>
+                    </div>
+                </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="container pt-0 pb-4">
+            <hr>
+            <div id="search-controls" class="container pt-1">
+                <div class="card bg-body-tertiary my-4">
+                    <div class="card-header pb-0">
+                        <h5>Research Publications</h5>
+                    </div>
+                    <div class="card-body p-4">
+                        <div class="row mt-2">
+                            <input type="text" id="main-search" class="bibtex_search form-control col mx-2"
+                                id="searchbar" placeholder="Search Research Contributions">
+                        </div>
+                        <div class="row mt-2">
+                            <select id="author-search"
+                                class="bibtex_search bibtex_generate_author form-select col-md mx-2" search="author">
+                                <option value="">Author</option>
+                            </select>
+                            <select id="keyword-search"
+                                class="bibtex_search bibtex_generate_keywords form-select col-md mx-2" search="keywords"
+                                bibtex_split_by="; ">
+                                <option value="">Keywords</option>
+                            </select>
+                            <select id="type-search"
+                                class="bibtex_search bibtex_generate_bibtextypekey form-select col-md mx-2"
+                                search="bibtextypekey">
+                                <option value="">Type</option>
+                            </select>
+                        </div>
+                        <a onclick="scrollToElement('bibtex-output')" class="btn btn-success float-end mt-4"><i class="bi bi-search"></i> Search</a>
+                    </div>
+                </div>
+
+                <bibtex src="bibtex/bibliography.bib"></bibtex>
+
+                <div class="bibtex_template card mt-1" style="display: none;">
+                    <div class="card-header d-flex align-items-center">
+                        <div class="bibtex-header">
+
+                            <div class="if title">
+                                <span class="if eprint">
+                                    <span class="if eprint==">
+                                        <a class="bibtexVar" href="./papers/+BIBTEXKEY+.pdf" extra="BIBTEXKEY">
+                                            <i class="bi bi-file-pdf"></i>
+                                            <span class="title"></span>
+                                        </a>
+                                    </span>
+                                </span>
+                                <span class="if howpublished">
+                                    <a class="bibtexVar" href="+howpublished+" extra="howpublished">
+                                        <i class="bi bi-box-arrow-up-right"></i>
+                                        <span class="title"></span>
+                                    </a>
+                                </span>
+                                <span class="if !eprint">
+                                    <span class="if !howpublished">
+                                        <span class="title"></span>
+                                    </span>
+                                </span>
+                            </div>
+
+                            <small>
+                                <span class="if journal"><em><span class="journal"></span></em>,</span>
+                                <span class="if publisher"><em><span class="publisher"></span></em>,</span>
+                                <span class="if booktitle">In <em><span class="booktitle"></span></em>,</span>
+                                <span class="if pages">pp. <span class="pages"></span></span>
+                                <span class="if address"><span class="address"></span>,</span>
+                                <span class="if year"><span class="year"></span>.</span>
+                            </small>
+                            <div class="if author">
+                                <i class="bi bi-person"></i>
+                                <span class="author"></span>
+                            </div>
+                        </div>
+                        <div class="ms-auto">
+                            <span class="bibtexVar mt-2 bibtextypekey bg-+bibtextypekey+ float-end badge "
+                                extra="bibtextypekey"></span><BR>
+                            <div class="btn-group mt-2" role="group">
+                                <div class="if abtract || keywords">
+                                    <a class="btn bibtexVar" data-bs-toggle="collapse" href="#+BIBTEXKEY+-body"
+                                        role="button" aria-expanded="false" aria-controls="+BIBTEXKEY+-body"
+                                        extra="BIBTEXKEY"><i class="bi bi-blockquote-left"></i> Abstract</a>
+                                </div>
+                                <div>
+                                    <a class="btn bibtexVar" data-bs-toggle="collapse" href="#+BIBTEXKEY+-footer"
+                                        role="button" aria-expanded="false" aria-controls="+BIBTEXKEY+-footer"
+                                        extra="BIBTEXKEY"><i class="bi bi-braces"></i> Citation</a>
+                                </div>
+                                <div class="if doi">
+                                    <a class="btn bibtexVar" href="http://dx.doi.org/+DOI+" extra="doi"><i class="bi bi-link"></i> DOI</a>
+                                </div>
+                                <div class="if url">
+                                    <a class="btn bibtexVar" href="+URL+" extra="url"><i class="bi bi-link"></i> URL</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="+BIBTEXKEY+-footer" class="bibtexVar card-footer bibtex-footer collapse" extra="BIBTEXKEY">
+                        <code>
+                            <span class="bibtexraw noread" bibtexjs-css-escape></span>
+                        </code>
+                    </div>
+                    <div class="if abstract || keywords">
+                        <div id="+BIBTEXKEY+-body" class="bibtexVar card-body collapse" extra="BIBTEXKEY">
+                            <small><em>Keywords: <span class="keywords output-keywords"></span></em></small>
+                            <p>
+                                <span class="abstract output-abstract"></span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="bibtex-output" class="bibtex_structure">
+                    <a class="btn float-end me-2" onclick="scrollToElement('search-controls');"><i class="bi bi-arrow-up-circle"></i></a>
+                    <div class="group year mt-3" extra="DESC number">
+                        <div class="templates"></div>
+                    </div>
+                </div>
+
+                <div class="bibtex_display" callback="getWords();">
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <footer class="bg-dark">
+        <div class="container py-4 my-4 text-white">
+            <div class="alert alert-info" role="alert">
+                This website is currently under development. The layout, content, and information is being updated to be more relevant to the current status of projects. 
+              </div>
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a href="../index.html" class="nav-link text-white">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="../imports/Libraries and Sources.md" class="nav-link text-white">Attribution</a>
+                </li>
+            </ul>
+            <p class="text-center">James Williams | jwilliams.science</p>
+            <p class="text-center">The use of logos, acknowledgements, or name on this website does not indicate
+                endorsement.</p>
+        </div>
+    </footer>
+
+    <script src="../imports/Bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="../imports/bibtex-js/bibtex_js.js"></script>
+    <script src="../imports/wordcloud2/wordcloud2.js"></script>
+    <script src="../js/scrolling.js"></script>
+    <script src="../js/bibtex-wordcloud.js"></script>
+    <script>
+        const videos = document.querySelectorAll('.dynamic-video');
+
+        videos.forEach(video => {
+            video.addEventListener('mouseenter', () => {
+                video.play();
+            });
+
+            video.addEventListener('mouseleave', () => {
+                video.pause();
+            });
+        });
+    </script>
+</body>
+
+</html>
