@@ -106,7 +106,7 @@
 .header-video {
     z-index: 20;
     position: relative;
-    background: transparent;
+    background-color: #121212;
 }
 
 .header-video .central-container:before {
